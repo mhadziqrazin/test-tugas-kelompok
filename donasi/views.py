@@ -10,6 +10,7 @@ def show_donasi(request):
 @login_required(login_url='/user/login')
 def bayar_donasi(request, id):
     donasi = Donasi.objects.get(pk = id)
+    print(donasi.foto)
     context = {
         'penggalang': donasi.penggalang.first_name,
         'nama_donasi': donasi.nama,
